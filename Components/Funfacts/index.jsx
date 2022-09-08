@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import React from "react";
 import TrackVisibility from "react-on-screen";
 
-const Funfact = dynamic(() => import("./Funfact"), { ssr: false });
+const Funfact = dynamic(() => import("./fact.jsx"), { ssr: false });
 
 const funfactData = [
     {
