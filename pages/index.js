@@ -1,13 +1,13 @@
 import Head from 'next/head'
-import Hero from '../Components/Hero';
-import About from '../Components/About';
+import Hero from '../Component/Hero';
+import About from '../Component/About';
 import { Element } from 'react-scroll'
-import Skills from '../Components/Skills';
-import Funfacts from '../Components/Funfacts';
-import Services from '../Components/Services';
-import Experiences from '../Components/Experiences';
-import Clients from '../Components/Clients';
-import Contact from '../Components/Contact';
+import Skills from '../Component/Skills';
+import Funfacts from '../Component/Funfacts';
+import Services from '../Component/Services';
+import Experiences from '../Component/Experiences';
+import Clients from '../Component/Clients';
+import Contact from '../Component/Contact';
 
 export default function Home() {
   return (
