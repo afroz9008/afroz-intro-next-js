@@ -88,9 +88,11 @@
 	}
 
 	.hero {
-		height: auto;
+		height: calc(100vh - 110px);
 		margin-top: 0;
-		padding: 60px 30px;
+		.client-item{
+			padding: 60px 30px;
+		}
 	}
 
 	.fact-item {

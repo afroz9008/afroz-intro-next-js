@@ -11,9 +11,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 const headerData = {
-    name: "Afroz Sorathiya",
-    designation: "Front-End Developer",
-    imageThumb: "/favicon.ico",
     social: {
         facebook:
             "https://www.facebook.com/people/Sorathiya-Afroz/100014619039836/",
@@ -23,8 +20,7 @@ const headerData = {
     },
 };
 
-function Header({ toggleHeader, toggleHandler }) {
-
+function Header({ header={}, toggleHeader, toggleHandler }) {
     useEffect(() => {
 
         const el = document.querySelector(".mobile-header")
@@ -34,7 +30,6 @@ function Header({ toggleHeader, toggleHandler }) {
         );
 
         observer.observe(el);
-        console.log(observer)
     }, []);
 
     return (
@@ -59,14 +54,14 @@ function Header({ toggleHeader, toggleHandler }) {
                         <Image
                             width={40}
                             height={40}
-                            src={headerData.imageThumb}
-                            alt={headerData.name}
+                            src={header.image || "/favicon.ico"}
+                            alt={header.title}
                         />
                     </a>
                 </Link>
                 <Link href="/">
                     <a className="site-title dot ml-2 default-theme-text-color-1">
-                        {headerData.name}
+                        {header.title}
                     </a>
                 </Link>
             </div>
@@ -99,16 +94,11 @@ function Header({ toggleHeader, toggleHandler }) {
                                 borderRadius: 25,
                                 overflow: "hidden",
                             }}>
-
-                            <img
-                                src={headerData.imageThumb}
-                                alt={headerData.name}
-                                style={{
-                                    height: "100%",
-                                    width: "100%",
-                                    borderRadius: "50%",
-                                    overflow: "hidden",
-                                }}
+                            <Image
+                                width={40}
+                                height={40}
+                                src={header.image || "/favicon.ico"}
+                                alt={header.title}
                             />
                         </a>
                     </Link>
@@ -118,12 +108,12 @@ function Header({ toggleHeader, toggleHandler }) {
                         <a
                             className="site-title dot mt-3 default-theme-text-color-1"
                         >
-                            {headerData.name}
+                            {header.title}
                         </a>
                     </Link>
 
                     <span className="site-slogan default-theme-text-color-1">
-                        {headerData.designation}
+                        {header.designation}
                     </span>
 
                     <nav>
@@ -269,7 +259,7 @@ function Header({ toggleHeader, toggleHandler }) {
                         </ul>
 
                         <span className="copyright">
-                            &copy; {new Date().getFullYear()} Afroz Sorathiya
+                            &copy; {new Date().getFullYear()} {header.title}
                         </span>
                     </div>
                 </div>

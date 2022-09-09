@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import SectionHeading from "../SectionHeading";
 
-const contactData = {
-    phone: ["+91 95748 79008"],
-    email: ["afrozsorathiya9586@gmail.com"],
-    location: "Una-362560, Gujarat, INDIA",
-};
 
-function Contact() {
+function Contact({ data }) {
     const [formdata, setFormdata] = useState({
         name: "",
         email: "",
@@ -65,25 +60,21 @@ function Contact() {
                         <i className="icon-phone"></i>
                         <div className="details">
                             <h5>Phone</h5>
-                            {contactData.phone.map((singlePhone, index) => (
-                                <span key={index} style={{ fontSize: 10 }}>{singlePhone}</span>
-                            ))}
+                            <span style={{ fontSize: 10 }}>{data.mobile}</span>
                         </div>
                     </div>
                     <div className="contact-info mb-5">
                         <i className="icon-envelope"></i>
                         <div className="details">
                             <h5>Email address</h5>
-                            {contactData.email.map((singleEmail, index) => (
-                                <span key={index} style={{ fontSize: 10 }}>{singleEmail}</span>
-                            ))}
+                                <span style={{ fontSize: 10 }}>{data.email}</span>
                         </div>
                     </div>
                     <div className="contact-info">
                         <i className="icon-location-pin"></i>
                         <div className="details">
                             <h5>Location</h5>
-                            <span style={{ fontSize: 10 }}>{contactData.location}</span>
+                            <span style={{ fontSize: 10 }}>{data.location}</span>
                         </div>
                     </div>
                 </div>

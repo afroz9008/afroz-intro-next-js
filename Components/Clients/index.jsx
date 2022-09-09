@@ -142,7 +142,6 @@ function Clients() {
                   }}
                   className={client.icon}
                 />
-                {/* <img src={client.image} alt="client-name" /> */}
               </div>
             </div>
           ))}

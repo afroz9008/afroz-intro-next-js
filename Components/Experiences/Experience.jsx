@@ -1,6 +1,6 @@
 import React from "react";
 
-function Experience({ experience: { year, degree, content } }) {
+function Experience({ experience: { year, degree, description } }) {
   return (
     <div className="entry">
       <div className="title">
@@ -8,7 +8,7 @@ function Experience({ experience: { year, degree, content } }) {
       </div>
       <div className="body">
         <h4 className="mt-0">{degree}</h4>
-        <p>{content}</p>
+        <p>{description}</p>
       </div>
     </div>
   );

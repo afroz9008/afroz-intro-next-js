@@ -41,14 +41,14 @@ const servicesData = [
     },
 ];
 
-function Services() {
+function Services({data}) {
     return (
         <section className="shadow-blue color-white padding">
             <div className="overlay"></div>
             <SectionHeading className="color-white" title="Services" />
             <div className="row -mt-20">
-                {servicesData.map((service) => (
-                    <div className="col-md-4 col-sm-6 mt-20" key={service.id}>
+                {data.map((service) => (
+                    <div className="col-md-4 col-sm-6 mt-20" key={service.description}>
                         <Service service={service} />
                     </div>
                 ))}

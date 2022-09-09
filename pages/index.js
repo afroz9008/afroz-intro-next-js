@@ -8,25 +8,27 @@ import Services from '../Components/Services';
 import Experiences from '../Components/Experiences';
 import Clients from '../Components/Clients';
 import Contact from '../Components/Contact';
+import { getAboutSectionData, getExperinece, getHeader, getHeroSectionData, getServices, getSkills } from '../libs/queries';
 
-export default function Home() {
+export default function Home(props) {
+
   return (
     <>
       <Head>
-        <title>Sorathiya Afroz</title>
-        <meta name="description" content="Sorathiya Afroz - Frontend developer" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>{props.header.title}</title>
+        <meta name="description" content={`${props.header.title} - ${props?.header?.designation}`} />
+        <link rel="icon" href={props.header.image} />
       </Head>
       <Element name="section-home">
-        <Hero />
+        <Hero data={props.hero} />
       </Element>
 
       <Element name="section-about">
-        <About />
+        <About data={props.about} />
       </Element>
 
       <Element name="section-skills">
-        <Skills />
+        <Skills data={props.skills} about={props.about} />
       </Element>
 
       <Element name="section-funfacts">
@@ -34,11 +36,11 @@ export default function Home() {
       </Element>
 
       <Element name="section-services">
-        <Services />
+        <Services data={props.services} />
       </Element>
 
       <Element name="section-experiences">
-        <Experiences />
+        <Experiences data={props.experiences} />
       </Element>
 
       <Element name="section-clients">
@@ -46,8 +48,29 @@ export default function Home() {
       </Element>
 
       <Element name="section-contact">
-          <Contact />
+        <Contact data={props.about} />
       </Element>
     </>
   )
 }
+
+export const getServerSideProps = async () => {
+  const header = await getHeader();
+  const hero = await getHeroSectionData();
+  const about = await getAboutSectionData();
+  const skills = await getSkills();
+  const services = await getServices();
+  const experiences = await getExperinece();
+
+  return {
+    props: {
+      header,
+      hero,
+      about,
+      skills,
+      services,
+      experiences,
+    }
+  };
+
+};

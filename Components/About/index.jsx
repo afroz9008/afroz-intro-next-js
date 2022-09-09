@@ -1,45 +1,46 @@
+import moment from "moment/moment";
 import Image from "next/image";
 import React from "react";
 import { Link as ScrollLink } from "react-scroll";
 import SectionHeading from "../SectionHeading";
 
-const aboutData = {
-    cvpath: "media/empty.pdf",
-    image: "/favicon.ico",
-    name: "Afroz Sorathiya",
-    location: "Gujarat, INDIA",
-    birthday: "30 May, 2000",
-    email: "afrozsorathiya9586@gmail.com",
-    aboutMe:
-        "I am Afroz sorathiya, Front-end developer from Gujarat, India. I have rich experience in web site design and building and customization, also I am good at React Native.",
-};
+// const aboutData = {
+//     cvpath: "media/empty.pdf",
+//     image: "/favicon.ico",
+//     name: "Afroz Sorathiya",
+//     location: "Gujarat, INDIA",
+//     birthday: "30 May, 2000",
+//     email: "afrozsorathiya9586@gmail.com",
+//     aboutMe:
+//         "I am Afroz sorathiya, Front-end developer from Gujarat, India. I have rich experience in web site design and building and customization, also I am good at React Native.",
+// };
 
-function Index() {
+function Index({ data }) {
     return (
         <section className="shadow-blue white-bg padding">
             <SectionHeading title="About Me" />
             <div className="row">
                 <div className="col-md-3">
-                    <div style={{minHeight:100,backgroundSize:"contain",backgroundRepeat:"no-repeat",backgroundPosition:"center", backgroundImage:`url(${aboutData.image})`}}/>
+                    <div style={{ minHeight: 100, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundImage: `url(${data.image})` }} />
                 </div>
                 <div className="col-md-9">
-                    <h2 className="mt-4 mt-md-0 mb-4">Hello,</h2>
-                    <p className="mb-0">{aboutData.aboutMe}</p>
+                    <h2 className="mt-4 mt-md-0 mb-4">{data.title},</h2>
+                    <p className="mb-0">{data.description}</p>
                     <div className="row my-4">
                         <div className="col-md-6">
                             <p className="mb-2">
-                                Name: <span className="text-dark">{aboutData.name}</span>
+                                Name: <span className="text-dark">{data.name}</span>
                             </p>
                             <p className="mb-0">
-                                Birthday: <span className="text-dark">{aboutData.birthday}</span>
+                                Birthday: <span className="text-dark">{moment(data.dob).format("DD MMM, yyyy")}</span>
                             </p>
                         </div>
                         <div className="col-md-6 mt-2 mt-md-0 mt-sm-2">
                             <p className="mb-2">
-                                Location: <span className="text-dark">{aboutData.location}</span>
+                                Location: <span className="text-dark">{data.location}</span>
                             </p>
                             <p className="mb-0">
-                                Email: <span className="text-dark">{aboutData.email}</span>
+                                Email: <span className="text-dark">{data.email}</span>
                             </p>
                         </div>
                     </div>

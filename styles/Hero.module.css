@@ -1,0 +1,7 @@
+.slickList{
+    background-color: red;
+
+}
+.slickList > .slick-list{
+    height: 100%;
+}

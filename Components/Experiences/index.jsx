@@ -44,13 +44,13 @@ const experiencesData = [
     // },
 ];
 
-function Experiences() {
+function Experiences({data}) {
     return (
         <section className="shadow-blue white-bg padding">
             <SectionHeading title="Experience" />
             <div className="timeline">
-                {experiencesData.map((experience) => (
-                    <Experience experience={experience} key={experience.id} />
+                {data.map((experience) => (
+                    <Experience experience={experience} key={experience.degree} />
                 ))}
                 <span className="timeline-line"></span>
             </div>
