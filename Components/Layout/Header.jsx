@@ -113,7 +113,7 @@ function Header({ header={}, toggleHeader, toggleHandler }) {
                         <a
                             className="site-title dot mt-3 default-theme-text-color-1"
                         >
-                            {(header.title || "").split(" ").map((t,i)=><>{!!i && <br />}{t}</>)}
+                            {header.title}
                         </a>
                     </Link>
 
