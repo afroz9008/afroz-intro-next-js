@@ -235,3 +235,35 @@ header {
     }
   }
 }
+
+.header-shimmer {
+  margin: 0 auto;
+  position: relative;
+
+  .header-main-content {
+    background-color: var(--colorblue);
+  }
+
+  .header-shimmer-border {
+    position: absolute;
+    display: block;
+    z-index: -9;
+    display: block;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(to right, var(--colorblue) 20%, var(--colorblue) 40%, #fff 50%, #fff 55%, var(--colorblue) 70%, var(--colorblue) 100%);
+    background-size: 200% auto;
+    border-radius: 20px;
+    animation: shine 5s linear infinite;
+    top: 3px;
+  }
+
+  /*Begin shimmer code*/
+
+  @keyframes shine {
+    to {
+      background-position: 200% center;
+    }
+  }
+}
