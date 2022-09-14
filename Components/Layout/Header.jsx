@@ -34,36 +34,41 @@ function Header({ header={}, toggleHeader, toggleHandler }) {
 
     return (
         <>
-            <div
+             <div
                 style={{ position: "sticky", top: -1, zIndex: 1 }}
-                className={"mobile-header py-2 px-3 mt-4"}
+                className={"mobile-header mt-4"}
             >
-                <button className="menu-icon mr-2" onClick={toggleHandler}>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <Link href="/" >
-                    <a className="logo" style={{
-                        height: 40,
-                        width: 40,
-                        borderRadius: 25,
-                        overflow: "hidden",
-                        position: "relative"
-                    }}>
-                        <Image
-                            width={40}
-                            height={40}
-                            src={header.image || "/favicon.ico"}
-                            alt={header.title}
-                        />
-                    </a>
-                </Link>
-                <Link href="/">
-                    <a className="site-title dot ml-2 default-theme-text-color-1">
-                        {header.title}
-                    </a>
-                </Link>
+                <div className="mobile-header header-shimmer flex-grow-1 d-flex position-relative">
+                    <div className="header-shimmer-border" />
+                    <div className="mobile-header py-2 px-3 header-main-content flex-grow-1 d-flex position-relative">
+                        <button className="menu-icon mr-2" onClick={toggleHandler}>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        <Link href="/" >
+                            <a className="logo" style={{
+                                height: 40,
+                                width: 40,
+                                borderRadius: 25,
+                                overflow: "hidden",
+                                position: "relative"
+                            }}>
+                                <Image
+                                    width={40}
+                                    height={40}
+                                    src={header.image || "/favicon.ico"}
+                                    alt={header.title}
+                                />
+                            </a>
+                        </Link>
+                        <Link href="/">
+                            <a className="site-title dot ml-2 default-theme-text-color-1">
+                                {header.title}
+                            </a>
+                        </Link>
+                    </div>
+                </div>
             </div>
 
             <header
