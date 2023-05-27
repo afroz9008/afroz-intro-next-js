@@ -14,8 +14,7 @@ export default class MyDocument extends Document {
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
           <link rel="shortcut icon" href="/static/favicon.ico" />
-{/*            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2220577119913325" crossOrigin="anonymous"></script>*/}
-          {/* Inject MUI styles first to match with the prepend: true configuration. */}
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4765929126302215" crossorigin="anonymous"></script>
           {this.props.emotionStyleTags}
         </Head>
         <body>
