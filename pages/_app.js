@@ -28,18 +28,6 @@ function MyApp({ Component, pageProps }) {
         </a>
       </Link>
     </IconButton>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4765929126302215"
-     crossOrigin="anonymous"></script>
-<!-- Banner ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4765929126302215"
-     data-ad-slot="3490197330"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
   </CacheProvider>
 }
 
