@@ -71,7 +71,7 @@ export default function WeddingInvitation() {
             </Head>
             <iframe
                 style={{ height: "99vh", width: "100vw", overflow: "hidden" }}
-                src={"http://127.0.0.1:5500/index.html" || "https://afroz9008.github.io/wedding-invitation/"}
+                src={"https://afroz9008.github.io/wedding-invitation/"}
             />
         </>
     )
